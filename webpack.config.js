@@ -11,6 +11,12 @@ module.exports = {
   resolveLoader: {
     root: path.join(__dirname, 'node_modules')
   },
+  vue: {
+    loaders: {
+      scss: 'style!css!sass',
+      js: 'babel!eslint'
+    }
+  },
   module: {
     loaders: [
       {
@@ -25,6 +31,10 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: 'style!css!sass'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css'
       }
     ]
   }
